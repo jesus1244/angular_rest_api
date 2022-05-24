@@ -111,6 +111,7 @@ export class UsersComponent implements OnInit {
   Delete(id: number){
 
     this.apiService.delete_user( id ).subscribe((data) => {
+      location.reload();
       console.log(data)
   })
   console.log(id)

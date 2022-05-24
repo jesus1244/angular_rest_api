@@ -106,9 +106,9 @@ export class InicioComponent implements OnInit {
 
   eliminar_detalle(id: number){
     this.apiService.delete_reserva( id ).subscribe( data => {
-
+      location.reload();
     } )
-    location.reload();
+    
   };
   update_detalle1(id: number){
     if(this.band){
@@ -131,8 +131,10 @@ export class InicioComponent implements OnInit {
       cancha: this.User.cancha,
       ubicacion: this.User.ubicacion,
     };
-    this.apiService.update_reserva( user ).subscribe( data => {
-      
+    this.apiService.update_reserva( user ).subscribe( (data:any) => {
+      if(data.band){
+        location.reload();
+      }
     } )
     
     if(this.band){
