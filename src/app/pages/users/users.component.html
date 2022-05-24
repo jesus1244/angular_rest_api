@@ -1,0 +1,198 @@
+<app-sidebar></app-sidebar>
+
+<h2>Pagina usuarios</h2>
+<hr>
+
+<div>
+    <div class="container" *ngIf="band">
+      <div class="row">
+        <h3>Formulario de registro</h3>
+        <div class="col-md-3">
+          <form action="" method="post">
+            <br />
+            <h4>Añadir usuario</h4>
+            <hr />
+            <div class="col-7">
+              <div>
+                Nombre
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  [(ngModel)]="User.nombre"
+                />
+              </div>
+              <hr />
+              <div>
+                apellido
+                <input
+                  type="text"
+                  name="apellidos"
+                  class="form-control"
+                  [(ngModel)]="User.apellidos"
+                />
+              </div>
+              <hr />
+              <div>
+                tipo documento
+                <input
+                  type="text"
+                  name="tipo_documento"
+                  class="form-control"
+                  [(ngModel)]="User.tipo_documento"
+                />
+              </div>
+              <hr />
+              <div>
+                documento
+                <input
+                  type="text"
+                  name="documento"
+                  class="form-control"
+                  [(ngModel)]="User.documento"
+                />
+              </div>
+              <hr />
+              <div>
+                telefono
+                <input
+                  type="text"
+                  name="phone"
+                  class="form-control"
+                  [(ngModel)]="User.phone"
+                />
+              </div>
+              <hr />
+              <div>
+                email
+                <input
+                  type="text"
+                  name="email"
+                  class="form-control"
+                  [(ngModel)]="User.email"
+                />
+              </div>
+            </div>
+            <br />
+            <button
+              class="btn bg-dark text-light"
+              (click)="Enviar()"
+              type="submit"
+            >
+              agregar admin
+            </button>
+          </form>
+        </div>
+        <div class="col-md-9 mt-4">
+          <table class="table table-holder">
+            <thead>
+              <tr>
+                <th>Usuario</th>
+                <th>tipo documento</th>
+                <th>documento</th>
+                <th>telefono</th>
+                <th>email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let detalle of lista_usuario; let i = index">
+                <td>{{ detalle.nombre + " " + detalle.apellidos }}</td>
+                <td>{{ detalle.tipo_documento }}</td>
+                <td>{{ detalle.documento }}</td>
+                <td>{{ detalle.phone }}</td>
+                <td>{{ detalle.email }}</td>
+                <button
+                  class="btn btn-secondary text-light bg-dark"
+                  (click)="Update(detalle.id)"
+                >
+                  Editar
+                </button>
+                <button
+                  class="btn btn-danger text-dark"
+                  (click)="Delete(detalle.id)"
+                >
+                  Eliminar
+                </button>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!band" class="container">
+    <div class="">
+      <form action="" method="post">
+        <br />
+        <h4>Editar usuario</h4>
+        <div class="col-7">
+          <div>
+            Nombre
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              [(ngModel)]="User2.nombre"
+            />
+          </div>
+          <hr />
+          <div>
+            apellido
+            <input
+              type="text"
+              name="apellidos"
+              class="form-control"
+              [(ngModel)]="User2.apellidos"
+            />
+          </div>
+          <hr />
+          <div>
+            tipo documento
+            <input
+              type="text"
+              name="tipo_documento"
+              class="form-control"
+              [(ngModel)]="User2.tipo_documento"
+            />
+          </div>
+          <hr />
+          <div>
+            documento
+            <input
+              type="text"
+              name="documento"
+              class="form-control"
+              [(ngModel)]="User2.documento"
+            />
+          </div>
+          <hr />
+          <div>
+            telefono
+            <input
+              type="text"
+              name="phone"
+              class="form-control"
+              [(ngModel)]="User2.phone"
+            />
+          </div>
+          <hr />
+          <div>
+            email
+            <input
+              type="text"
+              name="email"
+              class="form-control"
+              [(ngModel)]="User2.email" 
+            />
+          </div>
+        </div>
+        <br />
+        <button (click)="Update2()" class="btn btn-secondary text-light bg-dark">
+          Update
+        </button>
+        <button (click)="Update(1)" class="btn btn-secondary text-light bg-dark">
+            Regresar
+        </button>
+      </form>
+    </div>
+  </div>

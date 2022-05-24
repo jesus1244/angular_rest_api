@@ -1,0 +1,37 @@
+<!-- <div class="container mt-4">
+
+    <div class="card text-center">
+        <div class="card-header">
+            <b>LOGIN</b>
+        </div>
+        <div class="card-body p-4">
+            <label style="float: left"> Email </label>
+            <input class="form-control m-2" type="email" placeholder="Ingresar email" [(ngModel)]="Usuario.usuario">
+            <label style="float: left"> Password </label>
+            <input class="form-control m-2" type="password" placeholder="Ingresar password" [(ngModel)]="Usuario.password">
+            <button class="btn btn-primary bg-dark m-2" (click)="iniciar()" > Ingresar </button>
+        </div>
+    </div>
+</div> -->
+<div class="container mt-4">
+<div class="login">
+    <form class="custom-form" method="post">
+      <h1 class="text-center">Login</h1>
+      <input
+        type="email"
+        [(ngModel)]="Usuario.usuario"
+        name="email"
+        placeholder="Email"
+        required="required"
+      />
+      <input
+        type="password"
+        [(ngModel)]="Usuario.password"
+        name="password"
+        placeholder="Password"
+        required="required"
+      />
+      <button type="submit" (click)="iniciar()">Log in</button>
+    </form>
+  </div>
+</div>

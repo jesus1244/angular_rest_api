@@ -1,0 +1,68 @@
+<h2>admin Page :v</h2>
+<hr>
+
+<table class="table table-holder">
+    <thead>
+        <tr>
+            <th> id </th>
+            <th>nombre</th>
+            <th>usuario</th>
+            <th>contraseña</th>
+            <th>tipo documento</th>
+            <th>documento</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usuario of lista_usuarios; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ usuario.nombres }}</td>
+            <td>{{ usuario.usuario }}</td>
+            <td>{{ usuario.password }}</td>
+            <td>{{ usuario.tipo_documento }}</td>
+            <td>{{ usuario.documento }}</td>
+        </tr>
+        
+    </tbody>
+    
+    <br>
+    
+    <button (click) = "llenar_tabla()" 
+            class="btn bg-dark text-light"> Llenar tabla</button>
+    
+    
+</table>
+
+<hr>
+<form action="">
+    <h3>Añadir admin</h3>
+    <div class="col-3">
+    <div>
+        Nombre
+        <input type="text">
+    </div>
+    <hr>
+    <div>
+        Usuario
+        <input type="text">
+    </div>
+    <hr>
+    <div>
+        Contraseña
+        <input type="text">
+    </div>
+    <hr>
+    <div>
+        Tipo documento
+        <input type="text">
+    </div>
+    <hr>
+    <div>
+        Numero documento
+        <input type="text">
+    </div>
+</div>
+    <br>
+    <button class="btn bg-dark text-light">
+        agregar admin
+    </button>
+</form>
